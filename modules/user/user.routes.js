@@ -1,12 +1,15 @@
+const userController = require("./user.controller.js")
 const { Router } = require("express");
-const { index, login, messages, register, user } = require("./user.controller.js")
 
 const userRouter = Router();
 
-userRouter.get('/', index)
-userRouter.get('/login', login)
-userRouter.get('/messages', messages)
-userRouter.get('/register', register)
-userRouter.get('/user', user)
+userRouter.get('/index', userController.index)
+userRouter.get('/user', userController.user)
+userRouter.get('/login', userController.login)
+userRouter.get('/logout', userController.logout)
+userRouter.get('/register', userController.register)
+userRouter.get('/messages', userController.messages)
+userRouter.post('/handleLogin',userController.handleLogin)
+userRouter.post('/handleRegister',userController.handleRegister)
 
 module.exports = userRouter
