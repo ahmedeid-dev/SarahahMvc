@@ -1,10 +1,18 @@
 const { Schema, Types, model } = require("mongoose");
 
 const messageSchema = new Schema({
-    message: String,
+    message: {
+        type: String,
+        required: true,
+        trim: true,
+        capitalize: true,
+        minlength: 3,
+        maxlength: 10000,
+    },
     user: {
         type: Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true,
     }
 })
 

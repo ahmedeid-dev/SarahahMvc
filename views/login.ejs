@@ -6,17 +6,20 @@
     <h4 class="login">Login</h4>
   </div>
   <div class="card p-5 w-50 m-auto">
+    <% if (error) { %>
+    <div class="alert alert-danger my-2"><%- error %></div>
+    <% } %>
     <form method="POST" action="/handleLogin">
       <input
         class="form-control"
         placeholder="Enter your email"
-        type="text"
+        type="email"
         name="email"
       />
       <input
         class="form-control my-4"
         placeholder="Enter your Password"
-        type="text"
+        type="password"
         name="password"
       />
       <button class="btn btn-default-outline my-4 w-100 rounded">Login</button>
