@@ -3,14 +3,17 @@
 <div class="container text-center py-5 my-5 text-center">
 <div class="card py-5 mb-5">
     <a href="/" data-toggle="modal" data-target="#profile">
-    <img src="img/avatar.png" class="avatar" alt="avatar" />
+    <img src="/img/avatar.png" class="avatar" alt="avatar" />
     </a>
-    <h3 class="py-2">Ahmed Abd Al-Muti</h3>
+    <h3 class="py-2"><%= username %></h3>
     <div class="container w-50 m-auto">
-    <form action="" method="post">
+        <% if (error) { %>
+            <div class="alert alert-danger my-2"><%- error %></div>
+            <% } %>
+    <form action="/message/sendMessage/<%= userId %>" method="post">
         <textarea
         class="form-control"
-        name=""
+        name="message"
         id=""
         cols="10"
         rows="9"
@@ -22,17 +25,18 @@
     </form>
     </div>
 </div>
-<button
+
+<!-- <button
     data-toggle="modal"
     data-target="#share"
     class="btn btn-default-outline share"
 >
     <i class="fas fa-share-alt"></i> Share Profile
-</button>
+</button> -->
 </div>
 
 <!--  Share profile Modal -->
-<div
+<!-- <div
 class="modal fade"
 id="share"
 tabindex="-1"
@@ -62,7 +66,7 @@ aria-hidden="true"
     </div>
     </div>
 </div>
-</div>
+</div> -->
 <!-- /modal -->
 
 <%- include('footer.ejs') %>

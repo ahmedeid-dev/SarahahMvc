@@ -3,6 +3,6 @@ const { Router } = require("express");
 
 const messageRouter = Router();
 
-messageRouter.post('/', sendMessage)
+messageRouter.post('/sendMessage/:id', sendMessage)
 
 module.exports = messageRouter

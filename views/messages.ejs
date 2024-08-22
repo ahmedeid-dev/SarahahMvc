@@ -5,7 +5,7 @@
     <a href="/" data-toggle="modal" data-target="#profile">
     <img src="/img/avatar.png" class="avatar" alt="avatar" />
     </a>
-    <h3 class="py-2">Ahmed Abd Al-Muti</h3>
+    <h3 class="py-2"><%= username %></h3>
     <button
     data-toggle="modal"
     data-target="#share"
@@ -65,7 +65,7 @@ aria-labelledby="exampleModalLabel"
 aria-hidden="true"
 >
 <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content text-center">
     <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Share Profile</h5>
         <button
@@ -78,7 +78,9 @@ aria-hidden="true"
         </button>
     </div>
     <div class="modal-body">
-        <p>host/messages/id</p>
+        <a href="<%" ="url" %>>Send Message to <%= username %></a>
+        <!-- <a target="_blank" href=`${req.protocol}://${req.header.host}/user/${req.session.userId}`>Send Message to <%= username %></a> -->
+        <!-- <p>host/messages/id</p> -->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -94,9 +96,17 @@ aria-hidden="true"
 <div class="container text-center my-5 text-center">
 <div class="row">
     <div class="col-md-12">
+    <% for( let index = 0; index < messages?.length; index++ ) { %>
+    <div class="card py-5">
+        <h6>MsgNo : <%= index %></h6>
+        <h2><%= messages[index].message %></h2>
+        <p><%= messages[index].createdAt %></p>
+    </div>
+    <% } %> <% if (messages?.length == 0) { %>
     <div class="card py-5">
         <p>You don't have any messages...</p>
     </div>
+    <% } %>
     </div>
 </div>
 </div>

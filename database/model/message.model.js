@@ -9,6 +9,10 @@ const messageSchema = new Schema({
         minlength: 3,
         maxlength: 10000,
     },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
     user: {
         type: Types.ObjectId,
         ref: 'User',

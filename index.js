@@ -8,22 +8,20 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+
 const store = new MongoDBStore({
     uri: 'mongodb://localhost:27017/sarahah',
     collection: 'mySessions'
 })
 
 app.use(session({
-    store: store,
+    store,
     resave: false,
     secret: 'keyboard cat',
-    cookie: { secure: true },
     saveUninitialized: false,
 }))
-
-app.use(express.json())
-app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
 
 dbConnection()
 bootstrap(app)
