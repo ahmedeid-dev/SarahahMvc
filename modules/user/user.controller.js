@@ -41,7 +41,7 @@ module.exports.handleRegister = async (req, res) => {
     if (!name || !email || !password || !PasswordConfirmation) return res.redirect('/register?error=Please+provide+all+fields')
     if (password !== PasswordConfirmation) return res.redirect('/register?error=Passwords+do+not+match')
     const userExists = await User.findOne({ email })
-    if (userExists ) return res.redirect('/register?error=Email+already+exists')
+    if (userExists) return res.redirect('/register?error=Email+already+exists')
     const user = new User({ name, email, password })
     await user.save()
     res.redirect('/login')
