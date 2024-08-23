@@ -9,6 +9,9 @@
   },
   "keywords": [],
   "author": "",
+  "engines": {
+    "node": "20.x"
+  },
   "license": "ISC",
   "dependencies": {
     "connect-mongodb-session": "^5.0.0",
