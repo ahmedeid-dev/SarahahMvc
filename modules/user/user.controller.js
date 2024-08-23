@@ -102,3 +102,6 @@ module.exports.handleRegister = async (req, res) => {
     await user.save()
     res.redirect('/login')
 }
+module.exports.notFound = (req, res) => {
+    res.render('notFound.ejs')  
+}
