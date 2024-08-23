@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": " # sarahah",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +11,7 @@
   "keywords": [],
   "author": " ahmed eid",
   "engines": {
-    "node": "20.x"
+    "node": "18.x"
   },
   "license": "ISC",
   "dependencies": {
