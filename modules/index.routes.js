@@ -7,7 +7,6 @@ module.exports.bootstrap = (app) => {
     app.use('/', userRouter)
     app.use('/message', messageRouter)
 
-    // app.get('*', (req, res) => res.json({ message: ' Not Found' }))
     app.get('*',notFound)
 
 }
