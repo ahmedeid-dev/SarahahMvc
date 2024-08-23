@@ -11,7 +11,7 @@
   "keywords": [],
   "author": " ahmed eid",
   "engines": {
-    "node": "18.x"
+    "node": "14.x"
   },
   "license": "ISC",
   "dependencies": {
